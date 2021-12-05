@@ -1,18 +1,32 @@
 const { gql } = require('apollo-server');
 
 const turismoTypeDef = gql`
+  enum Size {
+    B
+    M
+    S
+  }
+
   type Owner {
     id: ID!
     nit: Int!
     name: String!
-    size: String!
+    size: Size!
+  }
+
+  enum RatingEnum {
+    ONE
+    TWO
+    THREE
+    FOUR
+    FIVE
   }
 
   type Hotel {
     owner: Int!
     type: String!
     address: String!
-    qualification: Int!
+    qualification: RatingEnum!
     name: String!
   }
 
@@ -25,14 +39,14 @@ const turismoTypeDef = gql`
 
   type Rating {
     id: ID!
-    rating: Int!
+    rating: RatingEnum!
     hotel: Int!
     tourist: Int!
   }
   input OwnerInput {
     nit: Int!
     name: String!
-    size: String!
+    size: Size!
   }
   input TouristInput {
     age: Int!
@@ -44,7 +58,7 @@ const turismoTypeDef = gql`
     owner: Int!
     type: String!
     address: String!
-    qualification: Int!
+    qualification: RatingEnum!
     name: String!
   }
 

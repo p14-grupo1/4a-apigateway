@@ -1,4 +1,11 @@
 const turismoResolver = {
+  RatingEnum: {
+    ONE: 1,
+    TWO: 2,
+    THREE: 3,
+    FOUR: 4,
+    FIVE: 5,
+  },
   Query: {
     hotels: async (_, __, { dataSources }) => {
       return await dataSources.turismoAPI.getHotels();
