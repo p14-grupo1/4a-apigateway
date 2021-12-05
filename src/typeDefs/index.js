@@ -1,8 +1,6 @@
-const accountTypeDef = require('./account_type_def');
+const turismoTypeDefs = require('./turismo_type_def');
 const authTypeDefs = require('./auth_type_def');
-const transactionTypeDefs = require('./transaction_type_def');
 
-
-const schemasArrays = [accountTypeDef, authTypeDefs, transactionTypeDefs];
+const schemasArrays = [turismoTypeDefs, authTypeDefs];
 
 module.exports = schemasArrays;
